@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "ethers": "4.x.x"
+  },
+  "scripts": {
+    "deploy": "git add . && git commit -m :rocket: && git push -u origin master"
   }
 }
