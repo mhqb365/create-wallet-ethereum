@@ -1,0 +1,9 @@
+{
+  "name": "create-wallet-ethereum",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "4.x.x"
+  }
+}
