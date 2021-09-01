@@ -3,14 +3,14 @@ const fs = require("fs");
 const checkAddress = require("./checkAddress");
 
 const total = Number(process.argv.slice(2)[0]);
-const beauty = process.argv.slice(2)[1].trim();
-let wallets = [];
+let beauty = process.argv.slice(2)[1];
+if (beauty) beauty = beauty.trim();
 
-// console.log(beauty);
+let wallets = [];
 
 async function createWallet(length) {
   if (beauty && beauty == "beauty") {
-    console.log("Creating and checking...");
+    console.log("Creat and checking...");
   } else console.log("Creating...");
   for (let i = 0; i < length; i++) {
     let randomWallet = ethers.Wallet.createRandom();

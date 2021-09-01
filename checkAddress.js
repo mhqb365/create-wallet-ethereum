@@ -1,13 +1,16 @@
-const fs = require('fs')
+const fs = require("fs");
 
-const condition = fs.readFileSync('./beauty.txt', 'utf-8').split(',\r\n')
-
-// console.log(condition)
+const config = require("./config.json");
 
 async function checkAddress(address) {
   let result = false;
-  for (let i = 0; i < condition.length; i++) {
-    if (address.slice(-9).search(condition[i].trim()) >= 0) result = true;
+  for (let i = 0; i < config.conditions.length; i++) {
+    if (
+      String(address.slice(config.length))
+        .toLowerCase()
+        .search(config.conditions[i].trim()) >= 0
+    )
+      result = true;
   }
   return result;
 }
